@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ActMobile</string>
+    <string name="region">Your region</string>
+    <string name="select_region">SELECT A REGION:</string>
+
+    <string name="pref_file" >com.example.preference_file</string>
+    <string name="pref_name" >com.example.preference_name</string>
+    <string name="pref_code" >com.example.preference_code</string>
+</resources>
