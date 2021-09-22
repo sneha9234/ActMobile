@@ -1,6 +1,7 @@
 package com.example.actmobile;
 
 import android.content.Context;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,13 +73,20 @@ public class countries_adapter extends RecyclerView.Adapter<countries_adapter.Vi
 
                     MainActivity.country_name.setText(data);
                     Glide.with(context).load("https://www.countryflags.io/"+image+"/flat/64.png").into(MainActivity.flag_image);
-                    MainActivity.dialog.dismiss();
 
                     prefConfig = new prefConfig(context);
                     prefConfig.writeName(data);
                     prefConfig.writeCode(image);
 
                     notifyItemRangeChanged(0, results.size());
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            MainActivity.dialog.dismiss();
+                        }
+                    }, 500);
+
                 }
             };
             itemView.setOnClickListener(l);
